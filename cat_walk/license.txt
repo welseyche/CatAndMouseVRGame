@@ -1,0 +1,11 @@
+Model Information:
+* title:	cat Walk
+* source:	https://sketchfab.com/3d-models/cat-walk-fc6e597a81ce4dc291dcca6a9e6888ba
+* author:	Erina eka syaharani (https://sketchfab.com/erinaekasyaharani)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "cat Walk" (https://sketchfab.com/3d-models/cat-walk-fc6e597a81ce4dc291dcca6a9e6888ba) by Erina eka syaharani (https://sketchfab.com/erinaekasyaharani) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

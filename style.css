@@ -1,0 +1,85 @@
+html,body{
+  font-family:'Comic Sans MS', cursive;;
+  background:#ffebf0;
+}
+.container{
+  display:flex;
+}
+#banner{
+  justify-content: center;
+  align-items: center;
+  background-color: #b885b8;
+  color: #ACDDDE
+}
+
+#banner h1{
+  text-shadow: 1px 1px #4c0000;
+}
+.button{
+  background-color: #ff819f ;
+  color:#ffebf0;
+  padding:10px;
+  margin:10px;
+  text-decoration: none;
+  border-radius:4px;
+  transition:2s
+}
+#body{
+  margin-top:20px;
+}
+#snapshot{
+  flex:1;
+  text-align:center;
+}
+#snapshot img{
+  width:90%;
+  border-radius:2px;
+  box-shadow:7px 7px 7px grey;
+  border:5px solid rgb(189, 153, 201);
+}
+#description{
+  flex:1;
+  text-align:center;
+}
+#background{
+  background-color: #f07f24;
+}
+
+.button:hover{
+  background-color: #51e2f5;
+  transition: .5s;
+  color:white;
+}
+
+#description{
+  text-shadow:2px 2px #478559;
+  color: white;
+  background-color: rgba(0,0,0,0.5);
+}
+
+#snapshot img:hover{
+   transform:scale(1.05);
+}
+
+#picture{
+  float: left;
+  border: 5px solid rgb(245, 203, 66);
+  align-items: center;
+  justify-content:center;
+}
+
+.names{
+  float:down;
+  display:flex;
+}
+
+.photo img{
+   filter: blurr(90%);
+}
+
+.photo img:hover{
+  filter:none;
+}
+
+
+

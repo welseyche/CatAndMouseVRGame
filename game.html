@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.2.2/dist/aframe-physics-system.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.2.0/dist/aframe-extras.loaders.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.2.0/dist/aframe-extras.controls.min.js"></script> -->
+  <script src="mycat.js"></script>
+  <script src="mycheese.js"></script>
+  <script src="camera.js"></script>
+  <script src="clouds.js"></script>
+  <script src="grass.js"></script>
+  <script src="snowflake.js"></script>
+  <script src="tree.js"></script>
+  <script src="fan.js"></script>
+  <script src="door.js"></script>
+  <script src="mousetrap.js"></script>
+  <script src="lamp.js"></script>
+  <script src="stairs.js"></script>
+  <script src="script.js"></script>
+  <script src="kinema.js"></script>
+</head>
+
+<body>
+
+  <a-scene light="defaultLightsEnabled:false" physics="debug: false">
+    <a-entity id="light" radius="0.5" light="type: spot; intensity: 1.5; color: #FFF; castShadow:true;  penumbra:0.1">
+    </a-entity>
+    <a-entity light="type: ambient; color: #fff; intensity:0.5dddd;"></a-entity>
+
+    <a-assets>
+      <a-assets-item id="catModel" src="cat_walk/scene.gltf"></a-assets-item>
+      <a-assets-item id="mouseModel" src="mouse/scene.gltf"></a-assets-item>
+      <a-assets-item id="camera" src="security_camera/scene.gltf"></a-assets-item>
+      <a-assets-item id="stairs" src="stairs/scene.gltf"></a-assets-item>
+      <a-assets-item id="ceramic" src="wall.jpg"></a-assets-item>
+      <a-assets-item id="wood" src="wood.jpg"></a-assets-item>
+      <a-assets-item id="grass" src="grass 1.jpg"></a-assets-item>
+      <a-assets-item id="pathway" src="pathway.jpg"></a-assets-item>
+      <a-assets-item id="carpet" src="carpet.jpg"></a-assets-item>
+      <a-assets-item id="redwood" src="red wood.jpg"></a-assets-item>
+      <a-assets-item id="greenCam" src="greenbackground.png"></a-assets-item>
+      <a-assets-item id="texture" src="texture.jpg"></a-assets-item>
+      <a-assets-item id="tree" src="bark.jpg"></a-assets-item>
+      <a-assets-item id="leaves" src="leaves.jpg"></a-assets-item>
+      <a-assets-item id="couch" src="couch texture.jpg">
+        <a-assets-item id="trap" src="trap.jpeg"></a-assets-item>
+        <audio id="songAudio" src="song.wav" preload="auto"></audio>
+        <audio id="tt" src="TT.wav" preload="auto"></audio>
+        <audio id="ajuNice" src="AjuNice.wav" preload="auto"></audio>
+        <audio id="antifragile" src="Antifragile.wav" preload="auto"></audio>
+        <audio id="collect" src="Collect.wav" preload="auto"></audio>
+        <audio id="lightsOn" src="LightsOn.wav" preload="auto"></audio>
+        <audio id="catMeow" src="CatMeow.wav" preload="auto"></audio>
+    </a-assets>
+
+    <a-entity class="wallWithDoor" position="0 0 0" rotation="0 0 0">
+      <a-box src="#wood" color="pink" position="-85 60 0" width="150" height="30" depth="1" repeat="8.5 2" shadow="receive:true" static-body></a-box>
+      <a-box src="#wood" color="pink" position="-85 12 0" width="150" height="30" depth="1" repeat="8.5 2" shadow="receive:true" static-body></a-box>
+      <a-box src="#wood" color="pink" position="0 60 0" width="35" height="30" depth="1" repeat="1 1" shadow="receive:true" static-body></a-box>
+      <a-box src="#wood" color="pink" position="-47.5 35 0" width="75" height="20" depth="1" repeat="1 1" shadow="receive:true" static-body></a-box>
+      <a-box src="#wood" color="pink" position="-135 35 0" width="50" height="20" depth="1" repeat="1 1" shadow="receive:true" static-body></a-box>
+      <a-box src="#wood" color="pink" position="30 25 0" width="40" height="100" depth="1" repeat="2 2" shadow="receive:true" static-body></a-box>
+    </a-entity>
+
+
+
+
+
+    <a-entity class="wall" position="-55 0 -100" rotation="0 0 0">
+      <a-box src="#wood" color="pink" position="0 12 0" width="210" height="30" depth="1" repeat="2 2" shadow="receive:true" static-body></a-box>
+      <a-box src="#wood" color="pink" position="0 60 0" width="210" height="30" depth="1" repeat="2 2" shadow="receive:true" static-body></a-box>
+      <a-box src="#wood" color="pink" position="0 35 0" width="75" height="20" depth="1" repeat="1 1" shadow="receive:true" static-body></a-box>
+      <a-box src="#wood" color="pink" position="-90 35 0" width="30" height="20" depth="1" repeat="1 1" shadow="receive:true" static-body></a-box>
+      <a-box src="#wood" color="pink" position="90 35 0" width="30" height="20" depth="1" repeat="1 1" shadow="receive:true" static-body></a-box>
+    </a-entity>
+
+    <a-box id="twice" position="49 35 -50" rotation="0 90 0" width="40" height="60" depth="1" src="Twice.jpg" sound="src:#tt; loop:false; volume:10" shadow="receive:true" interact></a-box>
+    
+    <a-box id="seventeen" position="-55 35 -99" width="40" height="60" depth="1" src="seventeen.jpeg" sound="src:#ajuNice; loop:false; volume:12" shadow="receive:true" interact></a-box>
+    
+    <a-box id="lesserafim" position="-159 35 -50" rotation="0 90 0" width="40" height="60" depth="1" src="sserafim.jpg" sound="src:#antifragile; loop:false; volume:12" shadow="receive:true" interact></a-box>
+
+    <a-entity class="wall" position="50 0 -50" rotation="0 90 0">
+      <a-box src="#wood" color="pink" position="0 25 0" width="100" height="100" depth="1" repeat="2 2" shadow="receive:true" static-body></a-box>
+
+    </a-entity>
+
+    <a-entity class="wall" position="-160 0 -50" rotation="0 90 0">
+      <a-box src="#wood" color="pink" position="0 25 0" width="100" height="100" depth="1" repeat="2 2" shadow="receive:true" static-body></a-box>
+    </a-entity>
+
+    <a-entity class="floor" position="-55 0 -50">
+      <a-box src="#wood" color="#D38AFF" position="0 0.1 0" width="210" height="1" depth="100" repeat="10 10" shadow="receive:true"></a-box>
+    </a-entity>
+
+    <a-entity class="ceiling" position="-55 75 -50">
+      <a-box src="#ceramic" color="white" position="0 0 0" width="210" height="0.2" depth="100" repeat="2 1"
+        shadow="receive:true" static-body></a-box>
+    </a-entity>
+
+    <a-box src="#ceramic" color="white" position="-55 77.5 -50" width="230" height="10" depth="120" repeat="2 1"
+      shadow="receive:true" static-body id="roof"></a-box>
+
+    <a-box src="#pathway" position="0 0.1 12" width="19" height="0.1" depth="25" repeat="5 5" shadow="receive:true">
+    </a-box>
+
+    <a-box src="#carpet" position="0 0.1 4" width="14" height="0.2" depth="8"></a-box>
+
+    <a-plane side="double" position="-20 0 7" rotation="-90 0 0" width="550" height="550" src="#grass" repeat="100 100"
+      shadow="receive:true" static-body></a-plane>
+
+
+
+    <a-entity class="table" position="24 0 -20">
+      <a-cylinder color="grey" radius="2" height="10" position="0 5 0" shadow="receive:true" static-body></a-cylinder>
+      <a-cylinder color="grey" radius="12" height="2" position="0 10 0" shadow="receive:true" static-body></a-cylinder>
+    </a-entity>
+
+    <a-entity class="table" position="-146 0 -87">
+      <a-cylinder color="grey" radius="2" height="10" position="0 5 0" shadow="receive:true" static-body></a-cylinder>
+      <a-cylinder color="grey" radius="12" height="2" position="0 10 0" shadow="receive:true" static-body></a-cylinder>
+    </a-entity>
+
+    <a-entity class="chair" position="-90 0 -20" rotation="0 90 0" dynamic-body>
+      <a-box src="#redwood" position="-3 10 -3" height="20" shadow="receive:true"></a-box>
+      <a-box src="#redwood" position="3 10 -3" height="20" shadow="receive:true"></a-box>
+      <a-box src="#redwood" position="-3 5 3" height="10" shadow="receive:true"></a-box>
+      <a-box src="#redwood" position="3 5 3" height="10" shadow="receive:true"></a-box>
+
+      <a-box src="#redwood" position="0 5 -3" width="6" shadow="receive:true"></a-box>
+      <a-box src="#redwood" position="3 5 0" depth="6" shadow="receive:true"></a-box>
+      <a-box src="#redwood" position="0 5 3" width="6" shadow="receive:true"></a-box>
+      <a-box src="#redwood" position="-3 5 0" depth="6" shadow="receive:true"></a-box>
+
+      <a-box src="#redwood" position="0 10 0" height="1.5" width="8" depth="8" shadow="receive:true"></a-box>
+      <a-box src="#redwood" position="0 15 -3" height="10" width="8" depth="1.5" shadow="receive:true"></a-box>
+    </a-entity>
+
+    <a-entity class="chair" position="-150 0 -35" rotation="0 90 0" dynamic-body>
+      <a-box src="#redwood" position="-3 10 -3" height="20" shadow="receive:true"></a-box>
+      <a-box src="#redwood" position="3 10 -3" height="20" shadow="receive:true"></a-box>
+      <a-box src="#redwood" position="-3 5 3" height="10" shadow="receive:true"></a-box>
+      <a-box src="#redwood" position="3 5 3" height="10" shadow="receive:true"></a-box>
+
+      <a-box src="#redwood" position="0 5 -3" width="6" shadow="receive:true"></a-box>
+      <a-box src="#redwood" position="3 5 0" depth="6" shadow="receive:true"></a-box>
+      <a-box src="#redwood" position="0 5 3" width="6" shadow="receive:true"></a-box>
+      <a-box src="#redwood" position="-3 5 0" depth="6" shadow="receive:true"></a-box>
+
+      <a-box src="#redwood" position="0 10 0" height="1.5" width="8" depth="8" shadow="receive:true"></a-box>
+      <a-box src="#redwood" position="0 15 -3" height="10" width="8" depth="1.5" shadow="receive:true"></a-box>
+    </a-entity>
+
+    <a-entity class="chair" position="-100 0 -55" rotation="0 0 0" dynamic-body>
+      <a-box src="#redwood" position="-3 10 -3" height="20" shadow="receive:true"></a-box>
+      <a-box src="#redwood" position="3 10 -3" height="20" shadow="receive:true"></a-box>
+      <a-box src="#redwood" position="-3 5 3" height="10" shadow="receive:true"></a-box>
+      <a-box src="#redwood" position="3 5 3" height="10" shadow="receive:true"></a-box>
+
+      <a-box src="#redwood" position="0 5 -3" width="6" shadow="receive:true"></a-box>
+      <a-box src="#redwood" position="3 5 0" depth="6" shadow="receive:true"></a-box>
+      <a-box src="#redwood" position="0 5 3" width="6" shadow="receive:true"></a-box>
+      <a-box src="#redwood" position="-3 5 0" depth="6" shadow="receive:true"></a-box>
+
+      <a-box src="#redwood" position="0 10 0" height="1.5" width="8" depth="8" shadow="receive:true"></a-box>
+      <a-box src="#redwood" position="0 15 -3" height="10" width="8" depth="1.5" shadow="receive:true"></a-box>
+    </a-entity>
+
+    <a-entity class="chair" position="30 0 -80" rotation="0 0 0" dynamic-body>
+      <a-box src="#redwood" position="-3 10 -3" height="20" shadow="receive:true"></a-box>
+      <a-box src="#redwood" position="3 10 -3" height="20" shadow="receive:true"></a-box>
+      <a-box src="#redwood" position="-3 5 3" height="10" shadow="receive:true"></a-box>
+      <a-box src="#redwood" position="3 5 3" height="10" shadow="receive:true"></a-box>
+
+      <a-box src="#redwood" position="0 5 -3" width="6" shadow="receive:true"></a-box>
+      <a-box src="#redwood" position="3 5 0" depth="6" shadow="receive:true"></a-box>
+      <a-box src="#redwood" position="0 5 3" width="6" shadow="receive:true"></a-box>
+      <a-box src="#redwood" position="-3 5 0" depth="6" shadow="receive:true"></a-box>
+
+      <a-box src="#redwood" position="0 10 0" height="1.5" width="8" depth="8" shadow="receive:true"></a-box>
+      <a-box src="#redwood" position="0 15 -3" height="10" width="8" depth="1.5" shadow="receive:true"></a-box>
+    </a-entity>
+
+
+
+    <a-entity class="couch" position="-50 0 -80">
+      <a-box src="couch texture.jpg" width="60" height="10" depth="20" position="0 5 0" shadow="receive:true"
+        static-body></a-box>
+      <a-box src="couch texture.jpg" width="19.5" height="5" depth="15" position="-20 12 5" shadow="receive:true"
+        static-body></a-box>
+      <a-box src="couch texture.jpg" width="19.5" height="5" depth="15" position="0 12 5" shadow="receive:true"
+        static-body></a-box>
+      <a-box src="couch texture.jpg" width="19.5" height="5" depth="15" position="20 12 5" shadow="receive:true"
+        static-body></a-box>
+      <a-box src="couch texture.jpg" width="19.5" height="20" depth="5" position="-20 15 -8" shadow="receive:true"
+        static-body></a-box>
+      <a-box src="couch texture.jpg" width="19.5" height="20" depth="5" position="0 15 -8" shadow="receive:true"
+        static-body></a-box>
+      <a-box src="couch texture.jpg" width="19.5" height="20" depth="5" position="20 15 -8" shadow="receive:true"
+        static-body></a-box>
+      <a-box src="couch texture.jpg" width="5" height="10" depth="20" position="-30 10 0" shadow="receive:true"
+        static-body></a-box>
+      <a-box src="couch texture.jpg" width="5" height="10" depth="20" position="30 10 0" shadow="receive:true"
+        static-body></a-box>
+    </a-entity>
+
+    <a-box class="tv" position="-50 20 -2" color="black" width="32" height="18">
+    </a-box>
+
+    <a-entity class="table" position="-50 5 -40">
+      <a-box color="grey" src="#redwood" position="0 4 0" width="32" height="4" depth="24" shadow="receive:true"
+        static-body></a-box>
+      <a-cylinder color="grey" src="#redwood" position="-12 0 -9" radius="2" height="10" shadow="receive:true"
+        static-body></a-cylinder>
+      <a-cylinder color="grey" src="#redwood" position="12 0 -9" radius="2" height="10" shadow="receive:true"
+        static-body></a-cylinder>
+      <a-cylinder color="grey" src="#redwood" position="-12 0 9" radius="2" height="10" shadow="receive:true"
+        static-body></a-cylinder>
+      <a-cylinder color="grey" src="#redwood" position="12 0 9" radius="2" height="10" shadow="receive:true"
+        static-body></a-cylinder>
+    </a-entity>
+
+
+    <a-entity class="bench" position="-40 0 5">
+      <a-box color="brown" position="0 5 4.5" static-body height="1" width="27.55" depth="10" shadow="receive:true">
+      </a-box>
+      <a-box color="brown" position="0 10 0" height="10" width="27.5" depth="1" shadow="receive:true" static-body>
+      </a-box>
+      <a-cylinder color="grey" position="-13 2.5 0" height="5" radius="0.5" shadow="receive:true" static-body>
+      </a-cylinder>
+      <a-cylinder color="grey" position="13 2.5 0" height="5" radius="0.5" shadow="receive:true" static-body>
+      </a-cylinder>
+      <a-cylinder color="grey" position="-13 2.5 9" height="5" radius="0.5" shadow="receive:true" static-body>
+      </a-cylinder>
+      <a-cylinder color="grey" position="13 2.5 9" height="5" radius="0.5" shadow="receive:true" static-body>
+      </a-cylinder>
+    </a-entity>
+
+    <a-entity class="dining table" position="-125 5 -25" rotation="0 90 0">
+      <a-box color="white" position="0 5 0" width="35" height="1" depth="24" shadow="receive:true" static-body></a-box>
+      <a-cylinder color="grey" position="-15 0 -9" radius="1" height="10" shadow="receive:true" static-body>
+      </a-cylinder>
+      <a-cylinder color="grey" position="15 0 -9" radius="1" height="10" shadow="receive:true" static-body></a-cylinder>
+      <a-cylinder color="grey" position="-15 0 9" radius="1" height="10" shadow="receive:true" static-body></a-cylinder>
+      <a-cylinder color="grey" position="15 0 9" radius="1" height="10" shadow="receive:true" static-body></a-cylinder>
+    </a-entity>
+
+
+
+    <a-sky src="sky.jpg" color="purple"></a-sky>
+
+    <a-entity id="cameraRig" movement-controls="speed: 0.01" position="0 2 0">
+      <a-camera active id="mainCamera" position="0 0 0" rotation="0 180 0" kinema-body="radius:0.5">
+        <a-gltf-model position="0 0 10" scale="20 20 20" src="#mouseModel"></a-gltf-model>
+        <a-cursor raycaster="objects: [interact]">
+          <a-entity id="song" sound="src:#songAudio; loop:true; volume:0.5"></a-entity>
+          <a-entity sound="src:#tt; loop:false; volume:10"></a-entity>
+          <a-entity sound="src:#ajuNice; loop:false; volume:12"></a-entity>
+          <a-entity sound="src:#antifragile; loop:false; volume:12"></a-entity>
+          <a-entity sound="src:#collect; loop:false; volume:1"></a-entity>
+          <a-entity sound="src:#lightsOn; loop:false; volume:1"></a-entity>
+          <a-entity sound="src:#catMeow; loop:false; volume:10"></a-entity>
+          <a-text id="score" value="SCORE:" position="-3 1 -1" color="white" opacity="0"></a-text>
+          <a-text id="title" value="Cat and Mouse" scale="2 2 2" position="-1.5 1 -1" color="white"></a-text>
+          <a-text id="directions" value="Click to play" position="-1 -1 -1" opacity="1" color="white"></a-text>
+          <a-text id="PlayAgain" value="Play Again? press Y" position="-1 -1 -1" opacity="0" color="white"></a-text>
+          <a-image id="youWin" scale="3 3 1" src="win.png" opacity="0" position="0 1 -2"></a-image>
+          <a-image id="youLose" scale="3 3 1" src="you lose.png" opacity="0" position="0 1 -2"></a-image>
+        </a-cursor>
+      </a-camera>
+    </a-entity>
+
+  </a-scene>
+</body>
+
+</html>
